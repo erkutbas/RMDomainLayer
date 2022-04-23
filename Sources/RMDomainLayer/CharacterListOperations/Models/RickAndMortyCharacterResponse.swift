@@ -8,23 +8,23 @@
 import Foundation
 
 // MARK: - RickAndMortyCharacterResponse
-public final class RickAndMortyCharacterResponse: Codable {
-    public let info: Info
-    public let results: [Character]
+final public class RickAndMortyCharacterResponse: Codable {
+    public let info: Info?
+    public let results: [Character]?
 
-    public init(info: Info, results: [Character]) {
+    init(info: Info?, results: [Character]?) {
         self.info = info
         self.results = results
     }
 }
 
 // MARK: - Info
-public final class Info: Codable {
-    public let count, pages: Int
-    public let next: String
+final public class Info: Codable {
+    public let count, pages: Int?
+    public let next: String?
     public let prev: JSONNull?
 
-    public init(count: Int, pages: Int, next: String, prev: JSONNull?) {
+    init(count: Int?, pages: Int?, next: String?, prev: JSONNull?) {
         self.count = count
         self.pages = pages
         self.next = next
@@ -33,20 +33,20 @@ public final class Info: Codable {
 }
 
 // MARK: - Result
-public final class Character: Codable {
-    public let id: Int
-    public let name: String
-    public let status: Status
-    public let species: Species
-    public let type: String
-    public let gender: Gender
-    public let origin, location: Location
-    public let image: String
-    public let episode: [String]
-    public let url: String
-    public let created: String
+final public class Character: Codable {
+    public let id: Int?
+    public let name: String?
+    public let status: String?
+    public let species: String?
+    public let type: String?
+    public let gender: String?
+    public let origin, location: Location?
+    public let image: String?
+    public let episode: [String]?
+    public let url: String?
+    public let created: String?
 
-    public init(id: Int, name: String, status: Status, species: Species, type: String, gender: Gender, origin: Location, location: Location, image: String, episode: [String], url: String, created: String) {
+    init(id: Int?, name: String?, status: String?, species: String?, type: String?, gender: String?, origin: Location?, location: Location?, image: String?, episode: [String]?, url: String?, created: String?) {
         self.id = id
         self.name = name
         self.status = status
@@ -62,37 +62,20 @@ public final class Character: Codable {
     }
 }
 
-public enum Gender: String, Codable {
-    case female = "Female"
-    case male = "Male"
-    case unknown = "unknown"
-}
-
 // MARK: - Location
-public final class Location: Codable {
-    let name: String
-    let url: String
+final public class Location: Codable {
+    public let name: String?
+    public let url: String?
 
-    init(name: String, url: String) {
+    init(name: String?, url: String?) {
         self.name = name
         self.url = url
     }
 }
 
-public enum Species: String, Codable {
-    case alien = "Alien"
-    case human = "Human"
-}
-
-public enum Status: String, Codable {
-    case alive = "Alive"
-    case dead = "Dead"
-    case unknown = "unknown"
-}
-
 // MARK: - Encode/decode helpers
 
-public final class JSONNull: Codable, Hashable {
+final public class JSONNull: Codable, Hashable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
