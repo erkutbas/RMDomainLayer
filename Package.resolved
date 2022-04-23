@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "rmnetworkentitylayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/erkutbas/RMNetworkEntityLayer.git",
+      "state" : {
+        "revision" : "0921a1c439afbab5c27f22a728e4a7619f4c7c33",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
+      }
+    }
+  ],
+  "version" : 2
+}
