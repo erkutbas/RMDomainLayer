@@ -8,5 +8,11 @@
 import Foundation
 
 public final class RickAndMortyCharacterRequest: Codable {
-    
+
+    private(set) public var page: Int
+
+    public init(page: Int) {
+        self.page = page
+    }
+
 }
